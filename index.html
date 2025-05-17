@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sushilraey</title>
+    <link rel="icon" type="image/png" href="Fevicon-icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: linear-gradient(120deg, #232526 0%, #414345 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .main-card {
+            background: rgba(255,255,255,0.10);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px 0 rgba(31,38,135,0.25);
+            padding: 48px 36px 36px 36px;
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1.5px solid rgba(255,255,255,0.18);
+            animation: fadeIn 1.2s cubic-bezier(.39,.575,.56,1) both;
+            position: relative;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(40px);}
+            100% { opacity: 1; transform: translateY(0);}
+        }
+        .highlight-launch {
+            color: #00ff9d;
+            background: rgba(255, 204, 0, 0.10);
+            padding: 2px 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.08em;
+            box-shadow: 0 2px 8px rgba(255,204,0,0.08);
+            border-bottom: 2px solid #ffcc00;
+        }
+        .hero-img {
+            width: 90px;
+            margin-bottom: 5px;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.10));
+        }
+        .logo {
+            font-size: 1.2em;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            color: #00e6e6;
+        }
+        h1 {
+            font-size: 1.6em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: red;
+        }
+        .subtitle {
+            color:white;
+            margin-bottom: 28px;
+            font-size: 12px;
+        }
+        #countdown {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+        #countdown div {
+            background: rgba(255,255,255,0.18);
+            border-radius: 10px;
+            padding: 12px 10px;
+            min-width: 54px;
+        }
+        #countdown span {
+            display: block;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #ffcc00;
+        }
+        #countdown small {
+            color: #fff;
+            font-size: 0.93em;
+            opacity: 0.85;
+        }
+        .pre-reg-title {
+            margin: 28px 0 10px 0;
+            font-size: 1.08em;
+            font-weight: 600;
+            color: #ffcc00;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="email"] {
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            font-size: 1em;
+            background: rgba(255,255,255,0.18);
+            color: #fff;
+            outline: none;
+            transition: background 0.2s;
+        }
+        input[type="text"]::placeholder, input[type="email"]::placeholder {
+            color: #e0e0e0;
+            opacity: 0.8;
+        }
+        button[type="submit"] {
+            background: linear-gradient(90deg, #ffcc00 60%, #ff7f50 100%);
+            color: #222;
+            border: none;
+            border-radius: 8px;
+            padding: 13px;
+            font-size: 1.08em;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(255,204,0,0.13);
+            transition: background 0.2s, transform 0.2s;
+        }
+        button[type="submit"]:hover {
+            background: linear-gradient(90deg, #ffd633 60%, #ff9966 100%);
+            transform: translateY(-2px) scale(1.03);
+        }
+        #form-message {
+            margin-top: 10px;
+            font-size: 1.08em;
+            font-weight: bold;
+            color: #00e676;
+            text-align: center;
+        }
+        #form-message.error {
+            color: #ff1744;
+        }
+        .note {
+            font-size: 0.97em;
+            color: #e0e0e0;
+            margin-top: 16px;
+            opacity: 0.93;
+        }
+        .trust {
+            margin-top: 16px;
+            font-size: 0.93em;
+            color: #b3e6ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            opacity: 0.85;
+        }
+        .trust .shield {
+            font-size: 1.1em;
+            color: #ffcc00;
+        }
+        .updates-btn {
+            display: inline-block;
+            margin: 18px 0 10px 0;
+            padding: 12px 28px;
+            background: linear-gradient(90deg, #00e6e6 60%, #ffcc00 100%);
+            color: #222;
+            font-weight: bold;
+            font-size: 1.08em;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+            transition: background 0.2s, transform 0.2s;
+        }
+        .updates-btn:hover {
+            background: linear-gradient(90deg, #ffd633 60%, #00e6e6 100%);
+            color: #000;
+            transform: translateY(-2px) scale(1.03);
+        }
+        .fade-out {
+            animation: fadeOut 0.7s forwards;
+        }
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                transform: scale(0.98);
+            }
+        }
+        @media (max-width: 600px) {
+            html, body {
+                width: 100%;
+                min-height: 100vh;
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+            }
+            body {
+                align-items: flex-start;
+                justify-content: flex-start;
+            }
+            .main-card {
+                margin: 10px;
+                padding: 18px 8px;
+                max-width: calc(100% - 20px);
+                min-height: unset;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/1c2e3d6e7a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="main-card">
+        <img class="hero-img" src="pp.png" alt="Sushil Yadav">
+        <div class="logo">Sushil Yadav</div>
+        <h1>We're Launching Soon!</h1>
+        <div class="subtitle">
+            Awaited promise Will blossom on 
+            <span class="highlight-launch"><b>आषाढ १</b></span>.<br>
+            Be the first to experience that awaits!.
+        </div>
+        <div id="countdown">
+            <div><span id="days">00</span><small>Days</small></div>
+            <div><span id="hours">00</span><small>Hours</small></div>
+            <div><span id="minutes">00</span><small>Minutes</small></div>
+            <div><span id="seconds">00</span><small>Seconds</small></div>
+        </div>
+        <div class="pre-reg-title">Pre-register for exclusive early access</div>
+        <form id="register-form" autocomplete="off">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <button type="submit">Notify Me</button>
+        </form>
+        <div id="form-message"></div>
+        <div class="note">
+            We respect your privacy. No spam, ever.<br>
+            📩 Registered users get exclusive launch updates!
+        </div>
+        <div class="trust">
+            <span class="shield"><i class="fas fa-shield-alt"></i></span>
+            Your info is 100% safe & encrypted
+        </div>
+        <a href="contact.html" class="updates-btn">Contact Me</a>
+    </div>
+
+    <script>
+    // Set launch date for Nepal Time (NPT, UTC+5:45)
+    // June 15, 2025, 00:00 NPT is June 14, 2025, 18:15 UTC
+    const countdownDate = Date.UTC(2025, 5, 14, 18, 15, 0);
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const timeLeft = countdownDate - now;
+        if (timeLeft <= 0) {
+            document.getElementById("countdown").innerHTML = "<b>We're Live!</b>";
+            return;
+        }
+        document.getElementById("days").innerText = String(Math.floor(timeLeft / (1000 * 60 * 60 * 24))).padStart(2, '0');
+        document.getElementById("hours").innerText = String(Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+        document.getElementById("minutes").innerText = String(Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+        document.getElementById("seconds").innerText = String(Math.floor((timeLeft % (1000 * 60)) / 1000)).padStart(2, '0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // Animation before redirect for Contact Me button
+    document.querySelector('.updates-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector('.main-card').classList.add('fade-out');
+        setTimeout(function() {
+            window.location.href = "contact.html";
+        }, 650);
+    });
+
+    // Handle form submission
+    document.getElementById('register-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = this.name.value.trim();
+        const email = this.email.value.trim();
+        fetch('https://script.google.com/macros/s/AKfycbwbAfI8NYa7-HcrOInVdKat7IZ0qr8Iksmx2ONvUpaBFMbkG4DdjVOrXu4LWiiK4Y6D/exec', {
+            method: 'POST',
+            body: JSON.stringify({name, email}),
+            headers: {'Content-Type': 'application/json'}
+        })
+        .then(res => res.json())
+        .then(data => {
+            const msg = document.getElementById('form-message');
+            if(data.result === "success") {
+                msg.innerHTML = "Thank you! Please check your email.";
+                msg.classList.remove('error');
+                document.getElementById('register-form').reset();
+            } else {
+                msg.innerHTML = "Error: " + data.error;
+                msg.classList.add('error');
+            }
+        })
+        .catch(() => {
+            const msg = document.getElementById('form-message');
+            msg.innerHTML = "Something went wrong. Please try again.";
+            msg.classList.add('error');
+        });
+    });
+    </script>
+</body>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact - Sushil Yadav</title>
+  <meta name="viewport" content="width=380, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    body {
+      background: #f2f6fa;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      margin: 0;
+      padding: 40px 0;
+    }
+    .contact-info {
+      flex: 1 1 260px;
+      min-width: 380px;
+      max-width: 380px;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 12px 0 rgba(0,0,0,0.10);
+      padding: 10px 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+    .contact-photo {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      border: 3px solid #1A73E8;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    }
+    .contact-title {
+      font-size: 1.10em;
+      color: #444;
+      font-weight: bold;
+      margin-top: 2px;
+      margin-bottom: 2px;
+      text-align: center;
+    }
+    .contact-name {
+      font-size: 2em;
+      font-weight: bold;
+      color: #007baf;
+      margin-top: 0px;
+      margin-bottom: 8px;
+    }
+    .contact-details p {
+      margin-top: 2px;
+      margin-bottom: 0px;
+      font-size: 1em;
+      color: #222;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+    .contact-details a {
+      color: #1A73E8;
+      text-decoration: none;
+    }
+    .contact-details i {
+      color: #007baf;
+      font-size: 1em;
+    }
+    .contact-details i.fa-envelope { color: #EA4335; }
+    .contact-details i.fa-phone { color: #34A853; }
+    .contact-details i.fa-map-marker-alt { color: black; }
+    .contact-note-alert {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: linear-gradient(90deg, #e3f0ff 0%, #c9e7ff 100%);
+      color: black;
+      font-weight: 600;
+      font-size: 1.04em;
+      padding: 10px 10px;
+      border-radius: 38px;
+      margin: 14px 0 6px 0;
+    }
+    .contact-note-alert i {
+      font-size: 1.2em;
+      color: #e53935;
+    }
+    .contact-social {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px 10px;
+      justify-items: center;
+      margin-top: 10px;
+      margin-bottom: 0px;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 370px;
+    }
+    .contact-social a {
+      color: #1A73E8;
+      font-size: 2.5em;
+      margin: 0 6px;
+      transition: color 0.2s, transform 0.2s;
+    }
+    .contact-social a:hover {
+      color: #ff007f;
+      transform: scale(1.2);
+    }
+    .contact-social a .fa-facebook-f    { color: #1877f3; }
+    .contact-social a .fa-instagram    { color: #e4405f; }
+    .contact-social a .fa-tiktok       { color: #000; }
+    .contact-social a .fa-whatsapp     { color: #25d366; }
+    .contact-social a .fa-x-twitter    { color: #000; }
+    .contact-social a .fa-snapchat-ghost { color: #fffc00; }
+    .contact-social a .fa-youtube      { color: #ff0000; }
+    .contact-social a .fa-github       { color: #333; }
+    .contact-social a:hover i {
+      filter: brightness(1.5) drop-shadow(0 0 4px #fff);
+      transform: scale(1.2);
+    }
+    .contact-disclaimer {
+      display: flex;
+      align-items: flex-start;
+      gap: 4px;
+      background: white;
+      color:navy;
+      font-size: 0.80em;
+      font-weight: 500;
+      padding: 8px 10px;
+      border-left: 4px solid #0056B3;
+      border-right:4px solid #0056B3;
+      border-radius: 10px;
+      margin: 10px 0 0 0;
+      max-width: 420px;
+    }
+    .contact-disclaimer i {
+      font-size: 1.2em;
+      margin-top: 20px;
+      color: #e53935;
+    }
+   @media (max-width: 420px) {
+  body {
+    padding: 20px;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+  .contact-info {
+    min-width: 0;
+    max-width: 98%;
+    width: 98%;
+    border-radius: 12px;
+    margin: 0 auto 10px auto;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  }
+  .contact-photo {
+    width: 120px;
+    height: 120px;
+  }
+  .contact-social {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 100vw;
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="contact-info">
+    <img src="Contact-page.jpg" alt="Sushil Yadav" class="contact-photo">
+    <p class="contact-title">Developer</p>
+    <h2 class="contact-name">Sushil Yadav</h2>
+    <div class="contact-details">
+      <p>
+        <a href="mailto:sushilraey@gmail.com" class="contact-icon-link" title="Send Email"><i class="fas fa-envelope"></i></a>
+        <a href="mailto:sushilraey@gmail.com" class="contact-link">sushilraey@gmail.com</a>
+      </p>
+      <p>
+        <a href="tel:+9779814838396" class="contact-icon-link" title="Call"><i class="fas fa-phone"></i></a>
+        <a href="tel:+9779814838396" class="contact-link">+977-9814838396</a>
+      </p>
+      <p>
+        <a href="https://maps.google.com/?q=Kathmandu, Nepal" target="_blank" class="contact-icon-link" title="View Location"><i class="fas fa-map-marker-alt"></i></a>
+        <a href="https://maps.google.com/?q=Kathmandu, Nepal" target="_blank" class="contact-link">Kathmandu, Nepal</a>
+      </p>
+    </div>
+    <div class="contact-note-alert">
+      <i class="fas fa-info-circle"></i>
+      <span>Click on these icons to visit<br/>my social media profile, T8!</span>
+    </div>
+    <div class="contact-social">
+      <a href="https://www.facebook.com/sushilraey" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com/sushilraey" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://tiktok.com/@sushilraey" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+      <a href="https://wa.me/9779814838396" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://twitter.com/sushilraey" target="_blank" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://snapchat.com/add/sushilraey" target="_blank" title="Snapchat"><i class="fab fa-snapchat-ghost"></i></a>
+      <a href="https://youtube.com/@sushilraey" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://github.com/sushilraey" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    </div>
+    <div class="contact-disclaimer">
+      <i class="fas fa-exclamation-circle"></i>
+      <span>
+        Hey there! I’m all over social media—even beyond the icons you see here. If you ever want to find me, just search ‘sushilraey’ on any platform—I’ll be there, see you again!
+      </span>
+    </div>
+  </div>
+</body>
+</html>
