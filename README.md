@@ -41,12 +41,6 @@ This site is a digital showcase of my journey, skills, projects, and passions as
 
 ---
 
-## 📸 Screenshots
-
-> _Add screenshots of your Home, About, Gallery, and Contact pages here for a visual preview._
-
----
-
 ## 🛠️ How to Use
 
 1. **Clone or Download the Repository**
