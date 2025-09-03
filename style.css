@@ -421,6 +421,7 @@ body {
 .quote-icon {
     top: 0px; /* Position the opening quote */
     left: var(--space-md);
+    text-align: left;
 }
 
 .quote-text {
@@ -438,7 +439,10 @@ body {
         padding: var(--space-lg); /* Reduce padding for smaller screens */
     }
 
-    .quote-icon,
+    .quote-icon {
+text-align: left;
+    }
+
     .quote-text {
         font-size: 1.5rem; /* Adjust font size for tablets */
         padding: 0 var(--space-md); /* Reduce padding */
@@ -452,7 +456,9 @@ body {
         text-align: center; /* Further reduce padding for phones */
     }
 
-    .quote-icon,
+    .quote-icon {
+        text-align: left;
+    }
 
     .quote-text {
         font-size: 1.02rem; /* Adjust font size for phones */
@@ -2369,6 +2375,7 @@ body {
 .friends-grid.expanded .friend-card.hidden {
     display: block;
 }
+
 
 
 
