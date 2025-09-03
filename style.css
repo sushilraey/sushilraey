@@ -415,15 +415,8 @@ body {
     text-align: center; /* Center-align the quote text */
 }
 
-.quote-icon,
 
-
-.quote-icon {
-    top: 0px; /* Position the opening quote */
-    left: var(--space-md);
-    text-align: left;
 }
-
 .quote-text {
     font-style:normal;
     font-family: Roboto Slab;
@@ -437,12 +430,13 @@ body {
 @media (max-width: 768px) {
     .quote-section {
         padding: var(--space-lg); /* Reduce padding for smaller screens */
-    }
 
+            }
+    
     .quote-icon {
-text-align: left;
+text-align: left; 
     }
-
+    
     .quote-text {
         font-size: 1.5rem; /* Adjust font size for tablets */
         padding: 0 var(--space-md); /* Reduce padding */
@@ -2375,6 +2369,7 @@ text-align: left;
 .friends-grid.expanded .friend-card.hidden {
     display: block;
 }
+
 
 
 
