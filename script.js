@@ -128,6 +128,26 @@ function restartAudio() {
   }
 }
 
+
+
+
+// Photo Section Gallery
+document.addEventListener('DOMContentLoaded', () => {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    galleryItems.forEach((item) => {
+        const image = item.querySelector('.gallery-image');
+
+        // Add click event to the image
+        image.addEventListener('click', () => {
+            // Toggle the 'active' class to show/hide the overlay
+            item.classList.toggle('active');
+        });
+    });
+});
+
+
+
 // Enhanced date and time display
 function updateDateTime() {
   const now = new Date();
@@ -652,8 +672,7 @@ function showMoreFriends() {
 }
 
 
-
-    // Security Reason
+// Security Reason
     // Disable right-click
 document.addEventListener('contextmenu', (e) => {
     e.preventDefault();
@@ -679,3 +698,5 @@ document.addEventListener('keydown', (e) => {
     };
     console.log('%c', devtools);
 })();
+
+

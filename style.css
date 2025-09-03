@@ -403,35 +403,82 @@ body {
     margin-top: var(--space-sm);
 }
 
+/* General styles for the quote */
 .quote-section {
     margin: var(--space-2xl) 0;
     padding: var(--space-xl);
+    color: var(--gray-300);
     background: var(--bg-surface);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-xl);
     position: relative;
+    text-align: center; /* Center-align the quote text */
+}
+
+.quote-icon,
+.quote-icon-end {
+    position: absolute;
+    color: var(--primary); /* Use your primary color */
+    font-size: 5rem; /* Default size for larger screens */
+    opacity: 0.8; /* Slight transparency for a softer look */
 }
 
 .quote-icon {
-    position: absolute;
-    top: var(--space-md);
+    top: 0px; /* Position the opening quote */
     left: var(--space-md);
-    color: var(--primary);
-    font-size: 1.5rem;
+}
+
+.quote-icon-end {
+    bottom: var(--space-md); /* Position the closing quote */
+    right: var(--space-md);
 }
 
 .quote-text {
-    font-style: italic;
-    font-size: 1.125rem;
-    margin-bottom: var(--space-md);
-    padding-left: var(--space-2xl);
+    font-style:normal;
+    font-family: Roboto Slab;
+    font-size: 1.9rem; /* Default size for larger screens */
+    margin: 0 auto;
+    padding: 0 var(--space-2xl);
+    line-height: 1.5;
 }
 
-.quote-author {
-    text-align: right;
-    color: var(--gray-400);
-    font-weight: 500;
+/* Responsive adjustments for tablets */
+@media (max-width: 768px) {
+    .quote-section {
+        padding: var(--space-lg); /* Reduce padding for smaller screens */
+    }
+
+    .quote-icon,
+    .quote-icon-end {
+        font-size: 1.5rem; /* Reduce quote icon size */
+    }
+
+    .quote-text {
+        font-size: 1.5rem; /* Adjust font size for tablets */
+        padding: 0 var(--space-md); /* Reduce padding */
+    }
 }
+
+/* Responsive adjustments for phones */
+@media (max-width: 480px) {
+    .quote-section {
+        padding: var(--space-md);
+        text-align: center; /* Further reduce padding for phones */
+    }
+
+    .quote-icon,
+    .quote-icon-end {
+        font-size: 2rem; /* Smaller quote icon size for phones */
+    }
+
+    .quote-text {
+        font-size: 1.2rem; /* Adjust font size for phones */
+        text-align: center;
+        padding: 0 var(--space-sm); /* Compact padding */
+        line-height: 1.3; /* Adjust line height for better readability */
+    }
+}
+
 
 .hero-actions {
     display: flex;
@@ -602,6 +649,8 @@ body {
     margin: 0 auto;
     width: 700px;
     max-width: 700px;
+    line-height: normal;
+    letter-spacing: normal;
     background: var(--bg-surface); /* Slightly lighter background */
     border-radius: 12px;
     padding: 16px 16px; /* Increased padding for better spacing */
@@ -646,11 +695,14 @@ body {
 
 @media (max-width: 480px) {
     .section-description {
-        font-size: 0.9rem; /* Further reduce font size for very small screens */
+        font-size: 1rem; /* Further reduce font size for very small screens */
+        font-weight: normal;
+        text-align: center;
         padding: 10px 10px; /* Compact padding */
         border-left: 3px solid #06b6d4; /* Coral color for a softer look */
         border-right: 3px solid #06b6d4;
         line-height: normal;
+        letter-spacing: normal;
     }
     .cont {
         font-size: 10px; /* Further reduce font size for phones */
@@ -1326,6 +1378,7 @@ body {
     to { box-shadow: 0 0 50px var(--primary), 0 0 100px var(--accent); }
 }
 
+
 /* Gallery Grid */
 .gallery-grid {
     display: grid;
@@ -1339,17 +1392,14 @@ body {
     border-radius: var(--radius-xl);
     overflow: hidden;
     transition: all 0.2s ease;
-}
-
-.gallery-item:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-xl);
+    position: relative;
 }
 
 .gallery-image {
     position: relative;
     aspect-ratio: 4/3;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .gallery-image img {
@@ -1371,16 +1421,25 @@ body {
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: opacity 0.2s ease;
+    pointer-events: none; /* Prevent interaction until activated */
+    transition: opacity 0.3s ease;
 }
 
-.gallery-item:hover .gallery-overlay {
-    opacity: 1;
+.gallery-item.active .gallery-overlay {
+    opacity: 1; /* Show overlay when the item is active */
+    pointer-events: auto; /* Allow interaction when active */
 }
 
-.gallery-overlay i {
+.gallery-link {
     color: var(--white);
     font-size: 1.5rem;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.gallery-link:hover {
+    transform: scale(1.2);
+    color: var(--primary);
 }
 
 .gallery-info {
@@ -1397,31 +1456,17 @@ body {
     color: var(--gray-400);
     margin-bottom: var(--space-md);
 }
-
 .gallery-meta {
     display: flex;
-    justify-content: space-between;
-    font-size: 0.875rem;
+    justify-content: space-between; /* Add space between date and photographer */
+    align-items: center; /* Align items vertically in the center */
+    gap: var(--space-md); /* Optional: Add a small gap if needed */
     color: var(--gray-400);
 }
 
-.gallery-meta span {
-    display: flex;
-    align-items: center;
-    gap: var(--space-xs);
-}
 
-.gallery-arrow {
-    margin-left: 10px;
-    color: var(--primary);
-    text-decoration: none;
-    font-size: 0.875rem;
-    transition: color 0.2s ease;
-}
 
-.gallery-arrow:hover {
-    color: var(--primary-dark);
-}
+
 
 /* Contact Section */
 .contact-content {
@@ -1577,11 +1622,11 @@ body {
     line-height: normal; /* Improve readability */
     font-size: smaller;
     letter-spacing: normal; /* Slight letter spacing */
-    font-family: cursive;
+    font-family: playfair, serif; /* Use a clean, readable font */
 }
 
 .suggestion-box strong {
-    color: var(--primary); /* Highlight the username in primary color */
+    color: white; /* Highlight the username in primary color */
 }
 
 /* Modern Form */
@@ -1977,7 +2022,7 @@ body {
     font-size: var(--datetime-date-size);
     font-weight: var(--datetime-date-weight);
     color: var(--gray-300);
-    font-size: 20px;
+    font-size: 19px;
 }
 
 .datetime-widget .time {
@@ -1986,7 +2031,7 @@ body {
     font-weight: var(--datetime-day-weight);
     color: var(--gray-300);
     margin-top: 4px;
-    font-size: 15px;
+    font-size: 13px;
     height: 0.5;
 }
 
@@ -1994,11 +2039,11 @@ body {
 @media (max-width: 480px) {
     .datetime-widget .date {
         font-size: calc(var(--datetime-date-size) - 0.12rem);
-        font-size: 19px;
+        font-size: 14px;
     }
     .datetime-widget .time {
         font-size: calc(var(--datetime-day-size) - 0.12rem);
-        font-size: 0.9rem;
+        font-size: 0.6rem;
     }
 }
 
@@ -2149,10 +2194,6 @@ body {
     /* Reduce profile visual size so page height is lower */
     .profile-card { width: 200px; height: 200px; }
 
-    /* Slightly reduce quote font to save space */
-    .quote-text { font-size: 1rem; }
-    .quote-author { font-size: 0.85rem; }
-
     /* Ensure no unexpected vertical overflow inside hero */
     .hero-content, .hero-text, .hero-visual {
         box-sizing: border-box;
@@ -2163,7 +2204,7 @@ body {
 
 /* Extra small phones */
 @media (max-width: 420px) {
-    .quote-section { margin-top: 10px; padding: 0.6rem; }
+    .quote-section { margin-top: 10px; padding: 0.6rem; text-align: right;}
     .typewriter-section { margin-top: 3rem; }
     .hero-title { font-size: 1.5rem; }
     .profile-card { width: 170px; height: 110px; }
@@ -2345,4 +2386,7 @@ body {
 .friends-grid.expanded .friend-card.hidden {
     display: block;
 }
+
+
+
 
