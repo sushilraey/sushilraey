@@ -416,12 +416,6 @@ body {
 }
 
 .quote-icon,
-.quote-icon-end {
-    position: absolute;
-    color: var(--primary); /* Use your primary color */
-    font-size: 5rem; /* Default size for larger screens */
-    opacity: 0.8; /* Slight transparency for a softer look */
-}
 
 .quote-icon {
     top: 0px; /* Position the opening quote */
@@ -449,9 +443,6 @@ body {
     }
 
     .quote-icon,
-    .quote-icon-end {
-        font-size: 1.5rem; /* Reduce quote icon size */
-    }
 
     .quote-text {
         font-size: 1.5rem; /* Adjust font size for tablets */
@@ -467,10 +458,6 @@ body {
     }
 
     .quote-icon,
-    .quote-icon-end {
-        font-size: 2rem; /* Smaller quote icon size for phones */
-        top: 100px;
-    }
 
     .quote-text {
         font-size: 1rem; /* Adjust font size for phones */
@@ -2387,7 +2374,6 @@ body {
 .friends-grid.expanded .friend-card.hidden {
     display: block;
 }
-
 
 
 

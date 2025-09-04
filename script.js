@@ -672,6 +672,31 @@ function showMoreFriends() {
 }
 
 
+// Security Reason
+    // Disable right-click
+document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+});
 
+// Disable specific keyboard shortcuts
+document.addEventListener('keydown', (e) => {
+    // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+    if (
+        e.key === 'F12' ||
+        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
+        (e.ctrlKey && e.key === 'U')
+    ) {
+        e.preventDefault();
+    }
+});
+
+// Attempt to block developer tools
+(function () {
+    const devtools = /./;
+    devtools.toString = function () {
+        throw new Error("DevTools blocked!");
+    };
+    console.log('%c', devtools);
+})();
 
 
