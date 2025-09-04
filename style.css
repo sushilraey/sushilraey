@@ -469,6 +469,7 @@ body {
     .quote-icon,
     .quote-icon-end {
         font-size: 2rem; /* Smaller quote icon size for phones */
+        top: 100px;
     }
 
     .quote-text {
@@ -2386,6 +2387,7 @@ body {
 .friends-grid.expanded .friend-card.hidden {
     display: block;
 }
+
 
 
 
