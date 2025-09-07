@@ -672,6 +672,45 @@ function showMoreFriends() {
 }
 
 
+// Show/Hide Scroll-to-Up Button
+document.addEventListener('scroll', () => {
+    const scrollToUpBtn = document.getElementById('scroll-to-up');
+    const activeTab = document.querySelector('.tab.active');
+
+    if (activeTab && !activeTab.classList.contains('Home') && window.scrollY > 200) {
+        scrollToUpBtn.classList.remove('hidden');
+    } else {
+        scrollToUpBtn.classList.add('hidden');
+    }
+});
+
+// Scroll to Top Function
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Show/Hide Scroll-to-Down Button
+document.addEventListener('scroll', () => {
+    const scrollToDownBtn = document.getElementById('scroll-to-down');
+    const activeTab = document.querySelector('.tab.active');
+
+    if (activeTab && activeTab.scrollHeight > window.innerHeight && window.scrollY < activeTab.scrollHeight - window.innerHeight - 200) {
+        scrollToDownBtn.classList.remove('hidden');
+    } else {
+        scrollToDownBtn.classList.add('hidden');
+    }
+});
+
+// Scroll to Down Function
+function scrollToDown() {
+    const activeTab = document.querySelector('.tab.active');
+    if (activeTab) {
+        window.scrollTo({ top: activeTab.scrollHeight, behavior: 'smooth' });
+    }
+}
+
+
+
 // Security Reason
     // Disable right-click
 document.addEventListener('contextmenu', (e) => {
@@ -698,5 +737,3 @@ document.addEventListener('keydown', (e) => {
     };
     console.log('%c', devtools);
 })();
-
-

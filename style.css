@@ -415,18 +415,6 @@ body {
     text-align: center; /* Center-align the quote text */
 }
 
-.quote-icon,
-
-.quote-icon {
-    top: 0px; /* Position the opening quote */
-    left: var(--space-md);
-}
-
-.quote-icon-end {
-    bottom: var(--space-md); /* Position the closing quote */
-    right: var(--space-md);
-}
-
 .quote-text {
     font-style:normal;
     font-family: Roboto Slab;
@@ -442,8 +430,6 @@ body {
         padding: var(--space-lg); /* Reduce padding for smaller screens */
     }
 
-    .quote-icon,
-
     .quote-text {
         font-size: 1.5rem; /* Adjust font size for tablets */
         padding: 0 var(--space-md); /* Reduce padding */
@@ -456,8 +442,6 @@ body {
         padding: var(--space-md);
         text-align: center; /* Further reduce padding for phones */
     }
-
-    .quote-icon,
 
     .quote-text {
         font-size: 1rem; /* Adjust font size for phones */
@@ -1500,7 +1484,11 @@ body {
 
 .contact-role {
     color: var(--gray-400);
+    line-height: 0%;
+    letter-spacing: normal;
+    text-align: center;
 }
+
 
 .contact-methods {
     margin-bottom: var(--space-2xl);
@@ -2019,7 +2007,7 @@ body {
     font-weight: var(--datetime-day-weight);
     color: var(--gray-300);
     margin-top: 4px;
-    font-size: 13px;
+    font-size: 15px;
     height: 0.5;
 }
 
@@ -2031,7 +2019,7 @@ body {
     }
     .datetime-widget .time {
         font-size: calc(var(--datetime-day-size) - 0.12rem);
-        font-size: 0.6rem;
+        font-size: 0.7rem;
     }
 }
 
@@ -2375,6 +2363,64 @@ body {
     display: block;
 }
 
+/* Scroll to Up Button */
+.scroll-to-up {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-to-up.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+}
+
+.scroll-to-up:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
 
 
+/* Scroll to Down Button */
+.scroll-to-down {
+    position: fixed;
+    bottom: 80px; /* Place it above the scroll-to-up button */
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-to-down.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+}
+
+.scroll-to-down:hover {
+    background: var(--primary-dark);
+    transform: translateY(2px);
+}
 
