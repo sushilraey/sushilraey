@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>sushilraey</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="Images/Logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Modern Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <!-- replaced span with a button that reloads the page -->
+            <button type="button" class="brand-text" aria-label="Refresh page" title="Refresh page"
+                onclick="location.reload();">
+                sushilraey
+            </button>
+        </div>
+        <div class="nav-menu">
+            <button class="nav-btn" onclick="showTab('Home')" data-tab="Home">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </button>
+            <button class="nav-btn" onclick="showTab('About')" data-tab="About">
+                <i class="fas fa-user"></i>
+                <span>About</span>
+            </button>
+            <button class="nav-btn" onclick="showTab('Gallery')" data-tab="Gallery">
+                <i class="fas fa-images"></i>
+                <span>Gallery</span>
+            </button>
+            <button class="nav-btn" onclick="showTab('Contact')" data-tab="Contact">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+            </button>
+        </div>
+        <div class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section class="Home tab active">
+        <div class="hero-container">
+            <div class="hero-background">
+                <div class="gradient-orb orb-1"></div>
+                <div class="gradient-orb orb-2"></div>
+                <div class="gradient-orb orb-3"></div>
+            </div>
+
+            <div class="status-indicators">
+                <div class="flag-indicator">
+                    <img src="Images/Flag.gif" alt="Nepal Flag" class="nepal-flag">
+                </div>
+                <div class="datetime-widget">
+                    <div class="date"></div>
+                    <div class="time"></div>
+                </div>
+            </div>
+
+            <div class="hero-content">
+                <div class="hero-text">
+                    <!-- Quote section moved directly below status indicators -->
+                    <div class="quote-section">
+                        <div class="quote-content">
+                            <p class="quote-text">
+                                Darkness bows to the flame,<br> Women bow to the man who carries it
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Typewriter comes after the quote -->
+                    <div class="typewriter-section">
+                        <span class="typewriter-prefix">I'm a</span>
+                        <div class="typewriter-container">
+                            <span id="typewriter-text"></span>
+                            <span class="cursor">|</span>
+                        </div>
+                    </div>
+
+                    <!-- Name and intro -->
+                    <h1 class="hero-title">
+                        Hey, I'm <span class="highlight">Sushil</span> Yadav
+                        <br>
+                        <span class="subtitle">From Kathmandu, Nepal</span>
+                    </h1>
+
+                    <!-- Buttons (Calendar, Resume, About Me) -->
+                    <div class="hero-actions">
+                        <button class="btn btn-primary" onclick="showTab('About')">
+                            <span>About Me</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+
+                        <a href="Resume/Resume.webp" class="btn btn-secondary" onclick="handleResumeClick(event)">
+                            <i class="fas fa-download"></i>
+                            <span>Resume</span>
+                        </a>
+                        <a href="Calendar/Calendar-2082.pdf" class="btn btn-secondary"
+                            onclick="handleCalendarClick(event)">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Calendar</span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="profile-card">
+                        <div class="profile-image">
+                            <img src="Images/Wallpaper.png" alt="Sushil Yadav">
+                            <div class="profile-ring"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="About tab">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <span class="badge-dot"></span>
+                    <span>Get to know me</span>
+                </div>
+                <h1 class="section-title">About Me</h1>
+            </div>
+
+            <div class="about-intro">
+                <div class="about-profile">
+                    <div class="profile-pic">
+                        <img src="Images/About.jpg" alt="Sushil Yadav Profile">
+                    </div>
+                    <div class="profile-info">
+                        <h2 class="profile-name">Sushil Yadav</h2>
+                        <p class="profile-tagline">Learning | Glowing | Growing</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education Section -->
+            <div class="info-section">
+                <div class="info-header">
+                    <h3 class="info-title">
+                        <i class="fas fa-graduation-cap"></i>
+                        Academic Background
+                    </h3>
+                </div>
+
+                <div class="info-content">
+                    <div class="timeline">
+
+                        <!-- Pre-Primary -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h4>Pre-Primary Education</h4>
+                                <p class="timeline-institution">Sarlahi, Nepal</p>
+                            </div>
+                        </div>
+
+                        <!-- Primary -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h4>Primary Education <span>(Grades 1–5)</span></h4>
+                                <p class="timeline-institution">Sarlahi, Nepal</p>
+                            </div>
+                        </div>
+
+                        <!-- Basic / Lower Secondary -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h4>Basic / Lower Secondary Education <span>(Grades 6–8)</span></h4>
+                                <p class="timeline-institution">Rautahat, Nepal</p>
+                            </div>
+                        </div>
+
+                        <!-- Secondary Technical Education -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h4>Secondary Technical Education <span>(Grades 9–10)</span></h4>
+                                <p class="timeline-institution">Sarlahi, Nepal</p>
+                                <p class="timeline-details">Computer Engineering (Technical)</p>
+                            </div>
+                        </div>
+
+                        <!-- Higher Secondary / +2 -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h4>Higher Secondary Education / +2 <span>(Grades 11–12)</span></h4>
+                                <p class="timeline-institution">Kathmandu, Nepal</p>
+                                <p class="timeline-details">Computer Science</p>
+                            </div>
+                        </div>
+
+                        <!-- Bachelor's Degree -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h4>Higher Education / Undergraduate</h4>
+                                <p class="timeline-institution">Tribhuvan University, Kathmandu</p>
+                                <p class="timeline-details">Software Engineering......</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Projects Section -->
+                <div class="info-section">
+                    <div class="info-header">
+                        <h3 class="info-title">
+                            <i class="fas fa-code"></i>
+                            Projects
+                        </h3>
+                    </div>
+                    <div class="info-content">
+                        <div class="projects-grid">
+                            <div class="project-card">
+                                <div class="project-icon">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <h4>Smart Home System</h4>
+                                <p>Developed a Smart Home System for remote control of home appliances using mobile app
+                                    interface with real-time monitoring.</p>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">Arduino</span>
+                                    <span class="tech-tag">WiFi</span>
+                                    <span class="tech-tag">Mobile App</span>
+                                </div>
+                            </div>
+                            <div class="project-card">
+                                <div class="project-icon">
+                                    <i class="fas fa-trash"></i>
+                                </div>
+                                <h4>Smart Dustbin</h4>
+                                <p>Created a Smart Dustbin with automatic lid opening and full capacity detection with
+                                    waste management alerts.</p>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">Ultrasonic</span>
+                                    <span class="tech-tag">Servo Motor</span>
+                                    <span class="tech-tag">IoT</span>
+                                </div>
+                            </div>
+                            <div class="project-card">
+                                <div class="project-icon">
+                                    <i class="fas fa-flask"></i>
+                                </div>
+                                <h4>Science Exhibition</h4>
+                                <p>Participated in science exhibition at Sanothimi, Bhaktapur, showcasing innovative IoT
+                                    projects and solutions.</p>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">Leadership</span>
+                                    <span class="tech-tag">Communication</span>
+                                    <span class="tech-tag">Innovation</span>
+                                    <span class="tech-tag">Teamwork</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Section -->
+                <div class="info-section">
+                    <div class="info-header">
+                        <h3 class="info-title">
+                            <i class="fas fa-tools"></i>
+                            Skills
+                        </h3>
+                    </div>
+                    <div class="info-content">
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h4 class="skill-category-title">Design</h4>
+                                <div class="skill-items">
+                                    <div class="skill-item">UI/UX Design</div>
+                                    <div class="skill-item">Figma Design</div>
+                                    <div class="skill-item">Personal Branding</div>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4 class="skill-category-title">Development</h4>
+                                <div class="skill-items">
+                                    <div class="skill-item">Front-End Web Developer</div>
+                                    <div class="skill-item">Database Management</div>
+                                    <div class="skill-item">Technical Troubleshooting</div>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4 class="skill-category-title">Technology</h4>
+                                <div class="skill-items">
+                                    <div class="skill-item">Basic Data Science</div>
+                                    <div class="skill-item">MS Office Package</div>
+                                    <div class="skill-item">Hardware/Software Troubleshooting</div>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4 class="skill-category-title">Support</h4>
+                                <div class="skill-items">
+                                    <div class="skill-item">Smartphone Configuration</div>
+                                    <div class="skill-item">System Optimization</div>
+                                    <div class="skill-item">Technical Debugging</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Achievements Section -->
+                <div class="info-section">
+                    <div class="info-header">
+                        <h3 class="info-title">
+                            <i class="fas fa-trophy"></i>
+                            Achievements
+                        </h3>
+                    </div>
+                    <div class="info-content">
+                        <div class="achievement-box">
+                            <p>Under Development...</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Extra Curricular -->
+                <div class="info-section">
+                    <div class="info-header">
+                        <h3 class="info-title">
+                            <i class="fas fa-heart"></i>
+                            Interests & Hobbies
+                        </h3>
+                    </div>
+                    <div class="info-content">
+                        <div class="interests-grid">
+                            <div class="interest-item"><i class="fas fa-music"></i> Listening Music</div>
+                            <div class="interest-item"><i class="fas fa-film"></i> Watching Movies</div>
+                            <div class="interest-item"><i class="fas fa-plane"></i> Travelling</div>
+                            <div class="interest-item"><i class="fas fa-dog"></i> Dog Companion</div>
+                            <div class="interest-item"><i class="fas fa-users"></i> Leadership & Teamwork</div>
+                            <div class="interest-item"><i class="fas fa-language"></i> 10+ Languages</div>
+                            <div class="interest-item"><i class="fas fa-football-ball"></i> Football</div>
+                            <div class="interest-item"><i class="fas fa-gamepad"></i> E-Sports Gaming</div>
+                        </div>
+                    </div>
+                </div>
+
+
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="Gallery" class="Gallery tab">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <span class="badge-dot"></span>
+                    <span>My Journey</span>
+                </div>
+                <h1 class="section-title">My Memories</h1>
+                <p class="section-description">
+                    Mirrors reflect who we are today, but photos preserve the soul of our journey — the paths we’ve
+                    walked, the stories we’ve lived, and the emotions that shaped us.
+                </p>
+            </div>
+
+            <div class="audio-section">
+                <div class="audio-player">
+                    <div class="audio-header">
+                        <h3>
+                            <i class="fas fa-music"></i>
+                            Enjoy The Vibes Until Scroll
+                        </h3>
+                    </div>
+                    <audio controls id="audio-player">
+                        <source src="Music/Audio.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <div class="audio-controls">
+                        <button class="audio-btn" onclick="playAudio()">
+                            <i class="fas fa-play"></i>
+                            Play
+                        </button>
+                        <button class="audio-btn" onclick="pauseAudio()">
+                            <i class="fas fa-pause"></i>
+                            Pause
+                        </button>
+                        <button class="audio-btn" onclick="restartAudio()">
+                            <i class="fas fa-redo"></i>
+                            Restart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-grid">
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/tia.jpg" alt=" tia">
+                        <div class="gallery-overlay">
+                            <a href="https://www.facebook.com/photo?fbid=1488484343298038&set=a.116360147177138"
+                                target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Tribhuvan International Airport</h4>
+                        <p class="gallery-occasion">During Internship at TIA</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2026</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> <span
+                                    style="filter: blur(3px); user-select: none;">******</span> KC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/shambhunath.jpg" alt="Shambhu Nath">
+                        <div class="gallery-overlay">
+                            <a href="https://www.facebook.com/photo/?fbid=1481372357342570&set=a.116360147177138"
+                                target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Shambhu Nath, Kathmandu</h4>
+                        <p class="gallery-occasion">Visited in Sharwan (Shombari) month</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2026</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> Unknown</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/mustang.jpg" alt="mustang ">
+                        <div class="gallery-overlay">
+                            <a href="https://www.facebook.com/photo/?fbid=1333302058816268&set=pcb.1333303445482796"
+                                target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Muktinath Temple, Mustang</h4>
+                        <p class="gallery-occasion"> 4-Day Tour to Mustang</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2026</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> <span
+                                    style="filter: blur(3px); user-select: none;">******</span> Yadav</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/beni.jpg" alt=" Beni">
+                        <div class="gallery-overlay">
+                            <a href="https://www.facebook.com/photo?fbid=1334955098650964&set=pcb.1334956295317511"
+                                target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>On The Way Of Mustang</h4>
+                        <p class="gallery-occasion">4-Day Tour to Mustang</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2026</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> <span
+                                    style="filter: blur(3px); user-select: none;">******</span> Yadav</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/pokhra.jpg" alt="pokhra">
+                        <div class="gallery-overlay">
+                            <a href="https://www.facebook.com/photo/?fbid=1330349842444823&set=pcb.1330393859107088"
+                                target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Pokhra</h4>
+                        <p class="gallery-occasion">4-Day Tour to Mustang</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2026</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> <span
+                                    style="filter: blur(3px); user-select: none;">******</span> Yadav</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/mirror.jpg" alt="mirror">
+                        <div class="gallery-overlay">
+                            <a href="https://www.facebook.com/photo/?fbid=1315897723890035&set=pcb.1310480364431771"
+                                target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Mirror Photo</h4>
+                        <p class="gallery-occasion">Miiror photos click</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2026</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> <span
+                                    style="filter: blur(3px); user-select: none;">******</span> Sharma</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/Pashupati Nath 2025.jpg" alt="Pashupati Nath">
+                        <div class="gallery-overlay">
+                            <a href="https://www.facebook.com/share/p/1E911BJsVs/" target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Pashupatinath, Kathmandu</h4>
+                        <p class="gallery-occasion">Visited in Sharwan (Shombari) month</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2025</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> <span
+                                    style="filter: blur(3px); user-select: none;">******</span> Yadav</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/Casual.jpg" alt="Casual Photo">
+                        <div class="gallery-overlay">
+                            <a href="https://www.facebook.com/share/p/19wBMfR3vH/" target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Nepal Engineering College Visit</h4>
+                        <p class="gallery-occasion">Casual photo while Returning From School</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2025</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> <span
+                                    style="filter: blur(3px); user-select: none;">*****</span> Pokhrel</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/Godawari 2025.jpg" alt="Godawari">
+                        <div class="gallery-overlay">
+                            <a href="https://www.facebook.com/share/p/1D9SHUefDJ/" target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Godawari, Lalitpur</h4>
+                        <p class="gallery-occasion">Visited Marble dada with Friends</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2025</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> <span
+                                    style="filter: blur(3px); user-select: none;">*****</span> Thapa</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/Chess.jpg" alt="Chess Photo">
+                        <div class="gallery-overlay">
+                            <a href="https://www.facebook.com/share/p/17W4VFoevD/" target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Gatthaghar, Bhaktapur</h4>
+                        <p class="gallery-occasion">Playing Chess with Friends</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2025</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> <span
+                                    style="filter: blur(3px); user-select: none;">*****</span> Thakur</span>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/Dailekh.jpg" alt="Dailekh Trip">
+                        <div class="gallery-overlay">
+                            <a href="https://m.facebook.com/story.php?story_fbid=pfbid02hoZxMiwPSbMBPAZ9nKFLmVoyWwP6fGaNMJtTq7MriAatB44ujaV5jUKELVBsTiel&id=100064094581431&mibextid=Nif5oz"
+                                target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Dailekh Nature View</h4>
+                        <p class="gallery-occasion">Casual Visit while Travelling</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2025</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> Unknown</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/Recent.jpg" alt="Recent Photo">
+                        <div class="gallery-overlay">
+                            <a href="https://www.facebook.com/share/p/1BAB5tw7Md/" target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Casual photo of the month</h4>
+                        <p class="gallery-occasion">Casual photo of the month</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2025</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> Sushil Yadav</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/Pashupati Nath.jpg" alt="Pashupati Nath">
+                        <div class="gallery-overlay">
+                            <a href="https://www.facebook.com/share/p/1KJv954RKb/" target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Pashupatinath Temple, Kathmandu</h4>
+                        <p class="gallery-occasion">Casual View To Observe Night View</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2025</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> <span
+                                    style="filter: blur(3px); user-select: none;">*****</span> Yadav</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/Godawari.jpg" alt="Godawari">
+                        <div class="gallery-overlay">
+                            <a href="https://www.facebook.com/share/p/15EsjqraqV/" target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Botanical Garden, Godawari (Lalitpur)</h4>
+                        <p class="gallery-occasion">Casual Visit with Foreign Friends</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2025</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> Emo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/Saraswati Puja 2025.jpg" alt="Saraswati Puja 2025">
+                        <div class="gallery-overlay">
+                            <a href="https://www.facebook.com/share/p/193HXNG9SG/" target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Adarsha Sec School, Bhaktapur</h4>
+                        <p class="gallery-occasion">Saraswati Puja Prayer 2025</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2025</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> <span
+                                    style="filter: blur(3px); user-select: none;">*****</span> Ghimire</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/Nagarkot.jpg" alt="Nagarkot">
+                        <div class="gallery-overlay">
+                            <a href="https://www.facebook.com/share/p/196djZSqhW/" target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Nagarkot Picnic Spot, Bhaktapur</h4>
+                        <p class="gallery-occasion">School Picnic</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2025</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> <span
+                                    style="filter: blur(3px); user-select: none;">*****</span> Bam</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/Sky Tower.jpg" alt="Sky Tower">
+                        <div class="gallery-overlay">
+                            <a href="https://www.facebook.com/share/p/1EjaybrtB7/" target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Location: Sky Tower, Kathmandu</h4>
+                        <p class="gallery-occasion">Winter Vacation Last Day-Trip</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2025</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> <span
+                                    style="filter: blur(3px); user-select: none;">*****</span> Mahato</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/Dharhara.jpg" alt="Dharhara">
+                        <div class="gallery-overlay">
+                            <a href="https://www.facebook.com/share/p/1EfVmXXgMb/" target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Dharhara, Kathmandu</h4>
+                        <p class="gallery-occasion">Winter Vacation 3rd Day-Trip</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2025</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> <span
+                                    style="filter: blur(3px); user-select: none;">*****</span> Mahato</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/Shambhu.jpg" alt="Shambhu">
+                        <div class="gallery-overlay">
+                            <a href="https://www.facebook.com/share/p/18Ju7PHKWw/" target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Shambhu Temple Spot, Kathmandu</h4>
+                        <p class="gallery-occasion">Winter Vacation 2nd Day-Trip</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2025</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> Unknown</span>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/Cricket.jpg" alt="Cricket">
+                        <div class="gallery-overlay">
+                            <a href="https://www.facebook.com/share/p/1DavHgNyPN/" target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>TU Cricket Ground, Kritipur</h4>
+                        <p class="gallery-occasion">NPL Final Match Janakpur vs Sugarpaschim</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2024</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> <span
+                                    style="filter: blur(3px); user-select: none;">*****</span> Yadav</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/Virinchi College.jpg" alt="Virinchi College">
+                        <div class="gallery-overlay">
+                            <a href="https://www.facebook.com/share/p/1UknNq8L9Q/" target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Virinchi IT College, Lalitpur</h4>
+                        <p class="gallery-occasion">ICT Mela Exploring</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2024</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> Unknown</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/Chhath 2024.jpg" alt="Chhath 2024">
+                        <div class="gallery-overlay">
+                            <a href="https://www.facebook.com/share/p/1DsY5GnKAd/" target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Chhath festive</h4>
+                        <p class="gallery-occasion">Chhath Puja prayer</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2024</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> <span
+                                    style="filter: blur(3px); user-select: none;">*****</span> Mahato</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/Dipawali 2024.jpg" alt="Dipawali 2024">
+                        <div class="gallery-overlay">
+                            <a href="https://www.facebook.com/share/p/16B6JsWU9S/" target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Dipawali festive</h4>
+                        <p class="gallery-occasion">Dipawali Prayer</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2024</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> <span
+                                    style="filter: blur(3px); user-select: none;">*****</span> Mahato</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/Nunthar 2024.jpg" alt="Nunthar 2024">
+                        <div class="gallery-overlay">
+                            <a href="https://www.facebook.com/share/p/158yKZNHxw/" target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Nunthar Picnic Spot, Karmaiya</h4>
+                        <p class="gallery-occasion">Casual Visit with Friends</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2024</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> <span
+                                    style="filter: blur(3px); user-select: none;">*****</span> Pandit</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/Bharat taal.jpg" alt="Bharat Taal Pic">
+                        <div class="gallery-overlay">
+                            <a href="https://www.facebook.com/share/p/1FvWLXD2Zy/" target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Bharat Taal, Karmaiya</h4>
+                        <p class="gallery-occasion">Birthday of vanji Kuku</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2023</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> <span
+                                    style="filter: blur(3px); user-select: none;">*****</span> Yadav</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/Holi 2024.jpg" alt="Holi 2024">
+                        <div class="gallery-overlay">
+                            <a href="https://www.facebook.com/share/p/16Qe3DAhMR/" target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Holi festive</h4>
+                        <p class="gallery-occasion">Holi Celebration Before SEE in 2024</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2024</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> <span
+                                    style="filter: blur(3px); user-select: none;">*****</span> Raut</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/Saraswati Puja 2024.jpg" alt="Saraswati pooja 2024">
+                        <div class="gallery-overlay">
+                            <a href="https://www.facebook.com/share/p/1BmNWDcNDM/" target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Chakra Janta Higher Sec School, Barahathawa</h4>
+                        <p class="gallery-occasion">Sarsawati Puja Prayer 2024</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2024</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> <span
+                                    style="filter: blur(3px); user-select: none;">*****</span> Yadav</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/Manakamana Temple.jpg" alt="Manakamana Temple">
+                        <div class="gallery-overlay">
+                            <a href="https://www.facebook.com/share/p/18UpPJNoRz/" target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Manakamana Temple, Gorkha</h4>
+                        <p class="gallery-occasion">School Tour Day-3, Manakamana Temple</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2023</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> Sakshi Rastogi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/Lumbini Pic.jpg" alt="Lumbini Pic">
+                        <div class="gallery-overlay">
+                            <a href="https://www.facebook.com/share/p/1EzCqwtj7A/" target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Gautam Buddha Birth Place, Lumbini</h4>
+                        <p class="gallery-occasion">School Tour Day-1, Lumbini</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2023</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> <span
+                                    style="filter: blur(3px); user-select: none;">*****</span> Yadav</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/Sarsawati pooja 2022.jpg" alt="Saraswati pooja 2023">
+                        <div class="gallery-overlay">
+                            <a href="https://www.facebook.com/share/p/1KpxqhHg6Y/" target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Shree MRJL Higher Sec School, Barahathawa-10</h4>
+                        <p class="gallery-occasion">Sarsawati Puja Prayer 2023</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2023</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> Prince Rauniyar</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/Attitude.jpg" alt="Hetauda">
+                        <div class="gallery-overlay">
+                            <a href="https://www.facebook.com/share/p/1Z8nyq63rq/" target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Sahid Smarak Picnic spot, Hetauda</h4>
+                        <p class="gallery-occasion">School Picnic Day-1, Hetauda</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2022</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> <span
+                                    style="filter: blur(3px); user-select: none;">*****</span> Yadav</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/Nunthar Picnic.jpg" alt="Nunthar Picnic">
+                        <div class="gallery-overlay">
+                            <a href="https://www.facebook.com/share/p/1GR5xVpa19/" target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Nunthar Picnic Spot, Karmaiya</h4>
+                        <p class="gallery-occasion">Education Tour By Coaching Center</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2021</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> <span
+                                    style="filter: blur(3px); user-select: none;">*****</span> Yadav</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <img src="Images/Gallery/Old Photo.jpg" alt="old photo">
+                        <div class="gallery-overlay">
+                            <a href="https://www.facebook.com/share/p/162k8uoktb/" target="_blank" class="gallery-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-info">
+                        <h4>Bihani Social Venture, Barahathawa</h4>
+                        <p class="gallery-occasion">Casual Visit to Bihani Bann, Hatidanta</p>
+                        <div class="gallery-meta">
+                            <span class="gallery-date"><i class="fas fa-calendar"></i> Year 2020</span>
+                            <span class="gallery-photographer"><i class="fas fa-camera"></i> <span
+                                    style="filter: blur(3px); user-select: none;">*****</span> Yadav</span>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="Contact" class="Contact tab">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <span class="badge-dot"></span>
+                    <span>Let's work together</span>
+                </div>
+                <h1 class="section-title">Let's Connect</h1>
+                <p class="section-description">
+                    <span class=cont>I would love to hear from you!</span> <br>
+                    <span class=conta>Reach out for collaborations, inquiries, or just a friendly conversation.</span>
+                </p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info-section">
+                    <div class="contact-card">
+                        <div class="contact-profile">
+                            <div class="contact-avatar">
+                                <img src="Images/Contact.jpg" alt="Sushil Yadav">
+                            </div>
+                            <div class="contact-details">
+                                <h3>Sushil Yadav</h3>
+                                <p class="contact-role">Developer</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="method-info">
+                                    <span class="method-label">Email</span>
+                                    <a href="mailto:sushilraey@gmail.com">sushilraey@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="method-info">
+                                    <span class="method-label">Phone</span>
+                                    <a href="tel:+9779814838396">+977-9814838396</a>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="method-info">
+                                    <span class="method-label">Location</span>
+                                    <a href="https://www.google.com/maps/place/Kathmandu,+Nepal" target="_blank"
+                                        class="location-link">Kathmandu, Nepal
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="social-section">
+                            <h4>Follow me on social media</h4>
+                            <div class="social-links">
+                                <a href="https://www.facebook.com/sushilraey" target="_blank"
+                                    class="social-link facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://instagram.com/sushilraey" target="_blank"
+                                    class="social-link instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="https://tiktok.com/@sushilraey" target="_blank" class="social-link tiktok">
+                                    <i class="fab fa-tiktok"></i>
+                                </a>
+                                <a href="https://wa.me/9779814838396" target="_blank" class="social-link whatsapp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="https://twitter.com/sushilraey" target="_blank" class="social-link twitter">
+                                    <i class="fab fa-x-twitter"></i>
+                                </a>
+                                <a href="https://youtube.com/@sushilraey" target="_blank" class="social-link youtube">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a href="https://www.snapchat.com/add/sushilraey" target="_blank"
+                                    class="social-link snapchat">
+                                    <i class="fab fa-snapchat"></i>
+                                </a>
+                                <a href="https://t.me/sushilraey" target="_blank" class="social-link telegram">
+                                    <i class="fab fa-telegram"></i>
+                                </a>
+                                <a href="https://github.com/sushilraey" target="_blank" class="social-link github">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                            <div class="suggestion-box">
+
+                                <p>
+                                    Hey there! I’m all over social media—even beyond the icons you see here. If you ever
+                                    want to find me, just search <strong>‘sushilraey’</strong> on any platform—I’ll be
+                                    there, see you again!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-section">
+                    <form class="modern-form" id="contact-form">
+                        <div class="form-header">
+                            <h3>Send me a message</h3>
+                            <p>Fill out the form below and I'll get back to you soon!</p>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="cf-name">Full Name <span class="required">*</span></label>
+                                <input type="text" id="cf-name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cf-phone">Phone Number <span class="required">*</span></label>
+                                <input type="tel" id="cf-phone" name="phone" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cf-email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="cf-email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cf-reason">Reason for Contact <span class="required">*</span></label>
+                            <select id="cf-reason" name="reason" required>
+                                <option value="" disabled selected>Select a reason</option>
+                                <option value="Collaboration">Collaboration</option>
+                                <option value="Inquiries">Inquiries</option>
+                                <option value="Just Friendly Conversation">Just Friendly Conversation</option>
+                                <option value="Technical Support">Technical Support</option>
+                                <option value="Suggestion and Feedback">Suggestion and Feedback</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cf-message">Message <span class="required">*</span></label>
+                            <textarea id="cf-message" name="message" rows="5" required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-button">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+
+                        <div id="form-status" class="form-status"></div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <div class="faq-header">
+                    <h3>Frequently Asked Questions</h3>
+                    <p>Common questions and their answers</p>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What is the purpose of this website?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>This website is my personal space where I've shared details about myself—it's like my
+                                digital flex! It showcases my work, passions, and everything that represents me. Whether
+                                you're here to connect, collaborate, or just explore, this site is a reflection of who I
+                                am and what I do.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How can I reach you?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>You can submit a request via the contact form, which automatically sends a response based
+                                on your selected reason. For direct communication, my social media links are available
+                                on my website.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Who response me after I submit the form?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Once you submit the form, my chatbot system processes your request and sends a response
+                                based on the reason you selected. This ensures a quick and efficient reply tailored to
+                                your inquiry.
+                                However, if you require direct communication or a more personalized response, you can
+                                reach out to me via social media, where all links are available, just click on your
+                                favourite icons.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Who manages the contact form?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>The contact form is fully organized and managed by an intelligent bot designed to handle
+                                submissions seamlessly. When you send a message, bot instantly processes your request
+                                and provides a response based on the reason you selected. It ensures everything runs
+                                efficiently, making communication quick and hassle-free!</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Can you make websites for others?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>No, I currently don't develop projects for others. However, if you have a website idea
+                                you'd like to discuss, feel free to reach out through the contact form or my social
+                                media.</p>
+                        </div>
+                    </div>
+
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How can I stay in touch with you?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>You can stay in touch, by follow me on social media platforms like Facebook, Instagram,
+                                tiktok and twitter. Just search for <strong>sushilraey</strong> on any platform!</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How can I collaborate with you?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>You can reach out via the contact form above or email me directly at <a
+                                    href="mailto:sushilraey@gmail.com"><strong>sushilraey@gmail.com</strong></a>. Let me
+                                know your project details, and we can discuss further!</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!-- Old website link box -->
+            <div class="external-link-box">
+                <a href="Old.html" target="_blank" rel="noopener noreferrer">
+                    <span class="external-link-icon"><i class="fas fa-external-link-alt"></i></span>
+                    <span class="external-link-text">Visit My Old Website</span>
+                </a>
+            </div>
+
+
+            <!-- Footer -->
+            <div class="footer-section">
+                <div class="footer-content">
+                    <p>&copy; 2026 Sushil Yadav. All rights reserved.</p>
+                    <p>Designed & Developed by <strong>Sushil Yadav</strong></p>
+                    <p class="footer-warning">Unauthorized copying or modification of website content without prior
+                        permission is prohibited!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Scroll to Down Button -->
+    <div id="scroll-to-down" class="scroll-to-down hidden" onclick="scrollToDown()">
+        <i class="fas fa-arrow-down"></i>
+    </div>
+
+    <!-- Scroll to Up Button -->
+    <div id="scroll-to-up" class="scroll-to-up hidden" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+
+    <div id="notification" class="notification hidden">
+        <p id="notification-message"></p>
+    </div>
+
+
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>
