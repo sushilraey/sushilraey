@@ -2844,7 +2844,7 @@ body {
     }
 
     .Home .nepal-flag {
-        width: 2.7rem;
+        width: 2.9rem;
     }
 
     .Home .datetime-widget {
@@ -2853,12 +2853,12 @@ body {
     }
 
     .Home .datetime-widget .date {
-        font-size: 0.78rem;
+        font-size: 0.80rem;
     }
 
     .Home .datetime-widget .time {
         margin-top: 0.1rem;
-        font-size: 0.62rem;
+        font-size: 0.64rem;
     }
 
     .Home .hero-content {
@@ -2926,7 +2926,7 @@ body {
     }
 
     .Home .hero-visual {
-        min-height: 15.8rem;
+        min-height: 18.5rem;
         margin-top: 0.5rem;
         align-items: flex-start;
     }
@@ -2949,8 +2949,8 @@ body {
     }
 
     .Home .profile-image img {
-        width: 15rem;
-        height: 15rem;
+        width: 18rem;
+        height: 18rem;
         margin-top: 0.8rem;
         flex: 0 0 auto;
     }
