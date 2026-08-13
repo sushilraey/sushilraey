@@ -2928,7 +2928,7 @@ body {
     }
 
     .Home .hero-visual {
-        min-height: 24.2rem;
+        min-height: 28.2rem;
         margin-top: 0.5rem;
         align-items: flex-start;
     }
@@ -2951,8 +2951,8 @@ body {
     }
 
     .Home .profile-image img {
-        width: 24rem;
-        height: 24rem;
+        width: 28rem;
+        height: 28rem;
         margin-top: 0.8rem;
         flex: 0 0 auto;
     }
