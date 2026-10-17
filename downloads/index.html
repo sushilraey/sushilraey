@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Downloads | Sushil Yadav</title>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --panel: #111827;
+        --panel-soft: #1f2937;
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --accent: #22c55e;
+        --accent-strong: #16a34a;
+        --border: rgba(255,255,255,0.08);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
+
+      .container {
+        width: min(760px, 100%);
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        overflow: hidden;
+      }
+
+      .header {
+        padding: 24px 28px 14px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .header h1 {
+        margin: 0;
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
+      }
+
+      .content {
+        padding: 28px;
+      }
+
+      .item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        background: var(--panel-soft);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 18px 20px;
+      }
+
+      .item-info {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .item-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
+
+      .item-desc {
+        color: var(--muted);
+        font-size: 0.96rem;
+      }
+
+      .download-btn,
+      .home-btn {
+        display: inline-block;
+        text-decoration: none;
+        border-radius: 10px;
+        font-weight: 700;
+        padding: 12px 18px;
+        transition: 0.2s ease;
+        border: 1px solid transparent;
+      }
+
+      .download-btn {
+        background: var(--accent);
+        color: #03130a;
+      }
+
+      .download-btn:hover {
+        background: var(--accent-strong);
+      }
+
+      .home-btn {
+        margin-top: 22px;
+        background: transparent;
+        border-color: var(--border);
+        color: var(--text);
+      }
+
+      .home-btn:hover {
+        background: rgba(255,255,255,0.04);
+      }
+
+      @media (max-width: 640px) {
+        .item {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .download-btn {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Downloads</h1>
+      </div>
+
+      <div class="content">
+        <div class="item">
+          <div class="item-info">
+            <div class="item-title">My Money Log APK</div>
+            <div class="item-desc">Android application installer for My Money Log.</div>
+          </div>
+
+          <a class="download-btn" href="./mymoneylog.apk" download>
+            Download APK
+          </a>
+        </div>
+
+        <a class="home-btn" href="https://yadavsushil.com.np">← Back to website</a>
+      </div>
+    </div>
+  </body>
+</html>
