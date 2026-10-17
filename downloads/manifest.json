@@ -1,0 +1,11 @@
+{
+  "items": [
+    {
+      "id": "mymoneylog",
+      "title": "My Money Log (APK)",
+      "filename": "mymoneylog.apk",
+      "alias": "mymoneylog.apk",
+      "description": "Android installer for My Money Log. Upload the APK to downloads/mymoneylog.apk to enable direct download."
+    }
+  ]
+}
