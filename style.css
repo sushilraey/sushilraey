@@ -833,14 +833,14 @@ body {
 /* Responsive styling for smaller screens */
 @media (max-width: 768px) {
     .profile-tagline {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         /* Slightly smaller font size */
     }
 }
 
 @media (max-width: 480px) {
     .profile-tagline {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         /* Further reduced font size for very small screens */
     }
 }
